@@ -16,6 +16,19 @@ This will hopfully be useful for troubleshooting, but time will tell. :-)
 
 ---
 
+## My scripts: (work in progress)
+
+#### dtr-ol-ping
+
+This script tests DTR overlay networking connectivity. A log will be placed in `/tmp` on the host when finished.  
+
+```
+docker run --rm -it --privileged --name netshoot -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp stshow/netshoot dtr-ol-ping
+```
+
+
+---
+
 ## netshoot: a Docker + Kubernetes network trouble-shooting swiss-army container
 
 ```
