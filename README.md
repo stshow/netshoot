@@ -9,7 +9,7 @@ $ docker run --privileged --name stshow-netshoot -v /my/own/var-lib-docker:/var/
 OR you can attach to an existing docker instance using the docker client:
 
 ```
-$ docker run --rm -it --privileged --name stshow-netshoot -v /var/run/docker.sock:/var/run/docker.sock stshow/netshoot docker ps
+$ docker run --rm -it --privileged --name stshow-netshoot -v /var/run/docker:/var/run/docker -v /var/run/docker.sock:/var/run/docker.sock stshow/netshoot docker ps
 ```
 
 This will hopfully be useful for troubleshooting, but time will tell. :-)
