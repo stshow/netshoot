@@ -9,7 +9,7 @@ $ docker run --privileged --name netshoot -v /my/own/var-lib-docker:/var/lib/doc
 OR you can attach to an existing docker instance using the docker client:
 
 ```
-$ docker run --privileged --name netshoot -v /var/lib/docker:/var/lib/docker -d stshow/netshoot docker ps
+$ docker run --rm -it --privileged --name netshoot -v /var/run/docker.sock:/var/run/docker.sock stshow/netshoot docker ps
 ```
 
 This will hopfully be useful for troubleshooting, but time will tell. :-)
