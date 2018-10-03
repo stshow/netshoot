@@ -1,4 +1,6 @@
-FROM alpine:3.7
+#FROM alpine:3.7
+# Docker commands
+FROM docker:stable-dind
 
 RUN set -ex \
     && echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
