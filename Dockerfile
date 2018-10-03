@@ -61,6 +61,7 @@ ADD dump-network.sh /usr/local/bin/dump-network
 ADD ee-ports.sh /usr/local/bin/ee-ports
 ADD interlock-headers.sh /usr/local/bin/interlock-headers 
 ADD selinux-ports.sh /usr/local/bin/selinux-ports
+ADD grab-bundle.sh /usr/local/bin/grab-bundle
  
 # Settings
 ADD motd /etc/motd
