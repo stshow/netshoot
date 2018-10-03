@@ -43,6 +43,7 @@ RUN set -ex \
     util-linux \
     vim
 
+
 # apparmor issue #14140
 RUN mv /usr/sbin/tcpdump /usr/bin/tcpdump
 
@@ -52,6 +53,13 @@ RUN wget https://github.com/projectcalico/calicoctl/releases/download/v3.1.1/cal
 # Netgen
 ADD netgen.sh /usr/local/bin/netgen
 
+# My scripts
+ADD dtr-ol-ping.sh /usr/local/bin/dtr-ol-ping
+ADD dump-network.sh /usr/local/bin/dump-network
+ADD ee-ports.sh /usr/local/bin/ee-ports
+ADD interlock-headers.sh /usr/local/bin/interlock-headers 
+ADD selinux-ports.sh /usr/local/bin/selinux-ports
+ 
 # Settings
 ADD motd /etc/motd
 ADD profile  /etc/profile
