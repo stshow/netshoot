@@ -18,6 +18,8 @@ This will hopfully be useful for troubleshooting, but time will tell. :-)
 
 ## My scripts: (work in progress)
 
+##### Note: These scripts were created prior to my adaption of netshoot. So you will notice that nicolaka/netshoot is called in some cases. This should not impact the results and will eventually be fixed. 
+
 #### dtr-ol-ping
 
 This script tests DTR overlay networking connectivity. A log will be placed in `/tmp` on the host when finished.  
