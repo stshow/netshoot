@@ -3,13 +3,13 @@
 My release is based on the Docker-in-Docker container (`docker:stable-dind`) which can be used to attach to an existing docker socket or create a new instance. For example:
 
 ```
-$ docker run --privileged --name some-docker -v /my/own/var-lib-docker:/var/lib/docker -d stshow/netshoot
+$ docker run --privileged --name netshoot -v /my/own/var-lib-docker:/var/lib/docker -d stshow/netshoot
 ```
 
 OR
 
 ```
-$ docker run --privileged --name some-docker -v /var/lib/docker:/var/lib/docker -d stshow/netshoot
+$ docker run --privileged --name netshoot -v /var/lib/docker:/var/lib/docker -d stshow/netshoot
 ```
 
 This will hopfully be useful for troubleshooting, but time will tell. :-)
