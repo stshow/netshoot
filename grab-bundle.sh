@@ -4,6 +4,8 @@
 
 ### Functions
 
+# The script should place files in the /tmp directory. 
+
 grab_bundle_prompt(){
     read -p "UCP host (e.g ucp.example.com or IP): " HOST
     read -p "UCP port (default 443, press enter): " PORT
@@ -17,7 +19,8 @@ grab_bundle_prompt(){
     ## echo'ing authtoken as per Carl's original spec
     echo -en "\nAuthtoken: ${AUTHTOKEN}\n"
     curl -k -H "Authorization: Bearer $AUTHTOKEN" https://${HOST}:${PORT}/api/clientbundle -o bundle.zip
-    unzip bundle.zip -d ${HOST}
+    mkdir -p /tmp/${HOST}
+    unzip bundle.zip -d /tmp/${HOST}
     exit 0
 }
 
@@ -69,7 +72,8 @@ download_bundle(){
 }
 
 extract_bundle(){
-    unzip bundle.zip -d ${NODE}
+    mkdir -p /tmp/${NODE}
+    unzip bundle.zip -d /tmp/${NODE}
 }
 
 ### End Functions
