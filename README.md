@@ -38,7 +38,13 @@ For example, to confirm UCP manager ports are open, run the following from anoth
 docker run --rm -it --privileged --name stshow-netshoot --network=host -v /tmp:/tmp stshow/netshoot ee-ports ddc03-node1 manager
 ```
 
+#### dump-network
 
+This script uses the latest `support.sh` (https://github.com/docker/libnetwork/blob/master/support/support.sh) to dump network and container information. 
+
+```
+docker run --rm -it --privileged --name stshow-netshoot -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp stshow/netshoot dump-network
+```
 
 ---
 
