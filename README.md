@@ -29,7 +29,7 @@ docker run --rm -it --privileged --network=host --name stshow-netshoot -v /var/r
 #### ee-ports
 
 ```
-docker run --rm -it --privileged --name stshow-netshoot --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp stshow/netshoot ee-ports <node-hostname-or-ip> <manager-or-worker>
+docker run --rm -it --privileged --name stshow-netshoot --network=host -v /tmp:/tmp stshow/netshoot ee-ports <node-hostname-or-ip> <manager-or-worker>
 ```
 
 For example, to confirm UCP manager ports are open, run the following from another node on the network: 
