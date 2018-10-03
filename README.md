@@ -3,13 +3,13 @@
 My release is based on the Docker-in-Docker container (`docker:stable-dind`) which can be used to attach to an existing docker socket or create a new instance. For example:
 
 ```
-$ docker run --privileged --name netshoot -v /my/own/var-lib-docker:/var/lib/docker -d stshow/netshoot dockerd --debug
+$ docker run --privileged --name stshow-netshoot -v /my/own/var-lib-docker:/var/lib/docker -d stshow/netshoot dockerd --debug
 ```
 
 OR you can attach to an existing docker instance using the docker client:
 
 ```
-$ docker run --rm -it --privileged --name netshoot -v /var/run/docker.sock:/var/run/docker.sock stshow/netshoot docker ps
+$ docker run --rm -it --privileged --name stshow-netshoot -v /var/run/docker.sock:/var/run/docker.sock stshow/netshoot docker ps
 ```
 
 This will hopfully be useful for troubleshooting, but time will tell. :-)
@@ -23,8 +23,21 @@ This will hopfully be useful for troubleshooting, but time will tell. :-)
 This script tests DTR overlay networking connectivity. A log will be placed in `/tmp` on the host when finished.  
 
 ```
-docker run --rm -it --privileged --name netshoot -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp stshow/netshoot dtr-ol-ping
+docker run --rm -it --privileged --network=host --name stshow-netshoot -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp stshow/netshoot dtr-ol-ping
 ```
+
+#### ee-ports
+
+```
+docker run --rm -it --privileged --name stshow-netshoot --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp stshow/netshoot ee-ports <node-hostname-or-ip> <manager-or-worker>
+```
+
+For example, to confirm UCP manager ports are open, run the following from another node on the network: 
+
+```
+docker run --rm -it --privileged --name stshow-netshoot --network=host -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp stshow/netshoot ee-ports ddc03-node1 manager
+```
+
 
 
 ---
