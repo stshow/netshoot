@@ -48,6 +48,24 @@ This script uses the latest `support.sh` (https://github.com/docker/libnetwork/b
 docker run --rm -it --privileged --name stshow-netshoot --network=host -v /var/run/docker:/var/run/docker -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp stshow/netshoot dump-network
 ```
 
+#### grab-bundle
+
+A script to grab a UCP client bundle: 
+
+##### Interactive
+```
+docker run -it -v /tmp:/tmp stshow/netshoot grab-bundle
+```
+
+##### non-interactive
+
+Note: `-P` is an optional flag. For more examples see the help `-h`. 
+ 
+```
+docker run -it -v /tmp:/tmp stshow/netshoot grab-bundle -u <user> -p <password> -n <node> -P <port>
+```
+
+
 ---
 
 ## netshoot: a Docker + Kubernetes network trouble-shooting swiss-army container
