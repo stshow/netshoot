@@ -65,6 +65,13 @@ Note: `-P` is an optional flag. For more examples see the help `-h`.
 docker run -it -v /tmp:/tmp stshow/netshoot grab-bundle -u <user> -p <password> -n <node> -P <port>
 ```
 
+##### aws-api-poll
+
+Polls for basic AMI information on Amazon Instances
+
+```
+docker run -it --rm --network=host stshow/netshoot aws-api-poll
+```
 
 ---
 
