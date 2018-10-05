@@ -62,7 +62,12 @@ ADD ee-ports.sh /usr/local/bin/ee-ports
 ADD interlock-headers.sh /usr/local/bin/interlock-headers 
 ADD selinux-ports.sh /usr/local/bin/selinux-ports
 ADD grab-bundle.sh /usr/local/bin/grab-bundle
- 
+ADD aws-api-poll.sh /usr/local/bin/aws-api-poll 
+
+# jq
+ADD https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 /usr/local/bin/jq
+RUN chmod a+x /usr/local/bin/jq
+
 # Settings
 ADD motd /etc/motd
 ADD profile  /etc/profile
