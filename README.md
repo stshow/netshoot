@@ -54,7 +54,7 @@ A script to grab a UCP client bundle:
 
 ##### Interactive
 ```
-docker run -it -v /tmp:/tmp stshow/netshoot grab-bundle
+docker run -it --net host -v $(pwd):/tmp stshow/netshoot grab-bundle
 ```
 
 ##### non-interactive
@@ -62,7 +62,7 @@ docker run -it -v /tmp:/tmp stshow/netshoot grab-bundle
 Note: `-P` is an optional flag. For more examples see the help `-h`. 
  
 ```
-docker run -it -v /tmp:/tmp stshow/netshoot grab-bundle -u <user> -p <password> -n <node> -P <port>
+docker run -it --net host -v $(pwd):/tmp stshow/netshoot grab-bundle -u <user> -p <password> -n <node> -P <port>
 ```
 
 #### aws-api-poll
