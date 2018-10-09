@@ -16,6 +16,9 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+
+## This is a script to grab a UCP client bundle from Docker UCP. 
+
 ### Functions
 
 # The script should place files in the /tmp directory. 
@@ -35,6 +38,7 @@ grab_bundle_prompt(){
     curl -k -H "Authorization: Bearer $AUTHTOKEN" https://${HOST}:${PORT}/api/clientbundle -o bundle.zip
     mkdir -p /tmp/${HOST}
     unzip bundle.zip -d /tmp/${HOST}
+    rm bundle.zip
     exit 0
 }
 
@@ -88,6 +92,7 @@ download_bundle(){
 extract_bundle(){
     mkdir -p /tmp/${NODE}
     unzip bundle.zip -d /tmp/${NODE}
+    rm bundle.zip
 }
 
 ### End Functions
