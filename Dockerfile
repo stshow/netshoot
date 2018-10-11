@@ -64,6 +64,7 @@ ADD selinux-ports.sh /usr/local/bin/selinux-ports
 ADD grab-bundle.sh /usr/local/bin/grab-bundle
 ADD aws-api-poll.sh /usr/local/bin/aws-api-poll 
 ADD dockerveth.sh /usr/local/bin/dockerveth
+ADD nmon.sh /usr/local/bin/nmon
 
 # jq
 ADD https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 /usr/local/bin/jq
