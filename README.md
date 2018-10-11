@@ -82,6 +82,15 @@ A script to list container veth interfaces in a clean table.
 ```
 docker run -it --rm --privileged=true -v $(pwd):/tmp --network=host -v /var/run/docker.sock:/var/run/docker.sock:ro -v /proc:/host/proc:ro stshow/netshoot dockerveth
 ```
+
+#### nmon
+
+This is a script to invoke `nmon` inside of a container namespace for intuitive monitoring of network, disk, and cpu usage. 
+
+```
+docker run --rm -it --privileged --name stshow-netshoot -v /var/run/docker:/var/run/docker -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp stshow/netshoot nmon <CONTAINER-NAME-OR-ID>
+```
+ 
 ---
 
 ## netshoot: a Docker + Kubernetes network trouble-shooting swiss-army container
