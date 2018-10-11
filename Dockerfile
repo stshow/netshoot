@@ -63,7 +63,7 @@ ADD interlock-headers.sh /usr/local/bin/interlock-headers
 ADD selinux-ports.sh /usr/local/bin/selinux-ports
 ADD grab-bundle.sh /usr/local/bin/grab-bundle
 ADD aws-api-poll.sh /usr/local/bin/aws-api-poll 
-ADD dockerveth.sh /usr/local/bin/dockerveth.sh
+ADD dockerveth.sh /usr/local/bin/dockerveth
 
 # jq
 ADD https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 /usr/local/bin/jq
