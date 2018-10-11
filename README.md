@@ -73,6 +73,15 @@ Polls for basic AMI information on Amazon Instances
 docker run -it --rm --network=host stshow/netshoot aws-api-poll
 ```
 
+#### dockerveth
+
+My fork of `dockerveth.sh`: https://github.com/stshow/dockerveth
+
+A script to list container veth interfaces in a clean table. 
+
+```
+docker run -it --rm --privileged=true -v $(pwd):/tmp --network=host -v /var/run/docker.sock:/var/run/docker.sock:ro -v /proc:/host/proc:ro stshow/netshoot dockerveth
+```
 ---
 
 ## netshoot: a Docker + Kubernetes network trouble-shooting swiss-army container
