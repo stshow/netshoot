@@ -70,7 +70,10 @@ ADD nmon.sh /usr/local/bin/nmon
 ADD https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 /usr/local/bin/jq
 RUN chmod a+x /usr/local/bin/jq
 
-# Settings
+# Installing ctop - top-like container monitor
+ADD https://github.com/bcicen/ctop/releases/download/v0.7.1/ctop-0.7.1-linux-amd64 /usr/local/bin/ctop 
+RUN chmod +x /usr/local/bin/ctop
+
 ADD motd /etc/motd
 ADD profile  /etc/profile
 
